@@ -1,11 +1,16 @@
-use crate::graphics::window;
-use crate::graphics::window::Window;
-
+// mod content;
+mod core;
+mod game;
 mod graphics;
+// mod managers;
+// mod scenes;
 mod threading;
 
+use crate::core::game1::Game1;
+
 fn main() {
-    let window = Window::new(1600, 900, "Test!");
+    let mut game= Game1::new().expect("Failed to create game");
+    game.run();
 
     println!("Hello, world!");
 }
