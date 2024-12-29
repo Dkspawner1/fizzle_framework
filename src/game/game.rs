@@ -1,9 +1,8 @@
-use glfw::Key::Menu;
 use crate::core::game_time::GameTime;
 use crate::graphics::renderer::Renderer;
 use crate::graphics::window::Window;
 use crate::managers::scene_manager::SceneManager;
-
+use crate::scenes::menu_scene::Menu;
 
 pub struct Game {
     window: Window,

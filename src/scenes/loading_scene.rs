@@ -27,10 +27,7 @@ impl Scene for LoadingScene {
 
     fn draw(&self, renderer: &Renderer) {
         // Draw loading bar using self.progress
-        renderer.draw_loading_bar(self.progress);
+        // renderer.draw_loading_bar(self.progress);
     }
 
-    fn is_loading(&self) -> bool {
-        false // Loading scene is never in a loading state
-    }
 }
