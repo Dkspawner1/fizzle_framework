@@ -3,8 +3,9 @@ mod core;
 mod game;
 mod graphics;
 // mod managers;
-// mod scenes;
 mod threading;
+mod scenes;
+mod managers;
 
 use crate::core::game1::Game1;
 

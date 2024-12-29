@@ -24,9 +24,14 @@ impl Renderer {
         }
     }
 
-    pub fn render(&self) {
+    pub fn clear(&self) {
         unsafe {
             gl::Clear(gl::COLOR_BUFFER_BIT);
+        }
+    }
+
+    pub fn render(&self) {
+        unsafe {
             gl::UseProgram(self.program);
             gl::DrawArrays(gl::TRIANGLES, 0, 3);
         }

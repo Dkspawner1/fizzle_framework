@@ -36,18 +36,18 @@ impl Window {
             size_callback: None,
         })
     }
+
     pub fn get_proc_address(&mut self, name: &str) -> *const std::os::raw::c_void {
         self.window.get_proc_address(name)
     }
+
     pub fn set_size_callback<F: Fn(i32, i32) + 'static>(&mut self, callback: F) {
         self.size_callback = Some(Box::new(callback));
     }
 
-
     pub fn update(&mut self) {
         self.glfw.poll_events();
         for (_, event) in glfw::flush_messages(&self.events) {
-            println!("{:?}", event);
             match event {
                 WindowEvent::Size(width, height) => {
                     if let Some(ref callback) = self.size_callback {
@@ -61,9 +61,11 @@ impl Window {
             }
         }
     }
+
     pub fn should_close(&self) -> bool {
         self.window.should_close()
     }
+
     pub fn swap_buffers(&mut self) {
         self.window.swap_buffers();
     }

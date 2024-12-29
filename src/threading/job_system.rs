@@ -9,7 +9,7 @@ pub struct JobSystem {
     condition: Arc<Condvar>,
     threads: Vec<thread::JoinHandle<()>>,
     should_exit: Arc<Mutex<bool>>,
-    active_jobs: Arc<Mutex<usize>>,
+    pub(crate) active_jobs: Arc<Mutex<usize>>,
 }
 
 impl JobSystem {
